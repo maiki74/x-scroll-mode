@@ -105,7 +105,9 @@ addEventListener('click', (e) => {
 // on-screen arrows, shown only inside the video feed
 const arrows = document.createElement('div');
 arrows.hidden = true;
-arrows.style.cssText = 'position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:99999';
+// right:80px keeps clear of X's own mute / captions buttons and the Grok / chat buttons on the right edge;
+// top:80px keeps the volume slider above X's progress bar and the post text
+arrows.style.cssText = 'position:fixed;right:80px;top:80px;z-index:99999';
 for (const [label, name, dir] of [['▲', 'Previous video', -1], ['▼', 'Next video', 1]]) {
   const b = document.createElement('button');
   b.textContent = label;
